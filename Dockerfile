@@ -4,7 +4,6 @@ RUN mkdir -p /go/src/github.com/TimothyYe/bing-wallpaper
 WORKDIR /go/src/github.com/TimothyYe/bing-wallpaper
 RUN cd /go/src/github.com/TimothyYe/bing-wallpaper
 COPY . .
-RUN apk --no-cache add git \
 RUN apk --no-cache add git build-base make gcc libtool musl-dev \
     && GO111MODULE=on go build -o ./bw/bw ./bw/main.go
 
